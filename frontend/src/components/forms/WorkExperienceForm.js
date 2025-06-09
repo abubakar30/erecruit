@@ -21,10 +21,10 @@ const WorkExperience = ({ formData, setFormData }) => {
           <label className="block text-gray-700">Years of Experience</label>
           <input
             type="number"
-            name="experience"
-            value={formData.experience}
+            name="yearsExperience"
+            value={formData.yearsExperience}
             onChange={(e) =>
-              setFormData({ ...formData, experience: e.target.value })
+              setFormData({ ...formData, yearsExperience: e.target.value })
             }
             className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />

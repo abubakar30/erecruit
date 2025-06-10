@@ -1,5 +1,8 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import SuccessPage from './components/forms/SuccessPage';
 import MultiStepForm from './components/forms/MultiStepForm';
+import ApplicationList from './components/forms/ApplicationList';
 
 function App() {
   return (
@@ -12,7 +15,11 @@ function App() {
       </nav>
 
       <div className="container mx-auto mt-8">
-        <MultiStepForm />
+        <Routes>
+          <Route path="/" element={<MultiStepForm />} />
+          <Route path="/success" element={<SuccessPage />} />
+          <Route path="/applications" element={<ApplicationList />} />
+        </Routes>
       </div>
     </div>
   );

@@ -4,12 +4,14 @@ import AcademicInfoForm from './AcademicInfoForm';
 import WorkExperienceForm from './WorkExperienceForm';
 import ResumeUploadForm from './ResumeUploadForm';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const steps = ['Personal', 'Academic', 'Work', 'Resume'];
 
 export default function MultiStepForm() {
   const [step, setStep] = useState(0);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     address: '',
@@ -32,6 +34,7 @@ export default function MultiStepForm() {
     try {
       await axios.post('http://localhost:5000/submit', data);
       alert('Form submitted!');
+      navigate('/success');
     } catch (err) {
       alert('Error submitting form.');
     }

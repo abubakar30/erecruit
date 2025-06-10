@@ -44,5 +44,9 @@ app.post('/submit', upload.single('resume'), (req, res) => {
     });
 });
 
+//API for List of Applications
+const applicationRoutes = require("./routes/applications");
+app.use("/api/applications", applicationRoutes);
+
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
